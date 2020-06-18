@@ -10,7 +10,7 @@ namespace Projekt53262
     public class Kiosk : KontrolaPrasy
     {
         private string adres;
-        public List<Przeglad> listaPrasy = new List<Przeglad>();
+        public List<Przeglad> listaKategorii = new List<Przeglad>();
         public List<Pracownik> listaPracownikow = new List<Pracownik>();
 
         public Kiosk()
@@ -45,26 +45,40 @@ namespace Projekt53262
             }
         }
 
-
-        public void DodajPrase(Prasa prasa, string Rodzaj)
+        public void DodajKategorie(Przeglad nazwaKategorii)
         {
-            var i = listaPrasy.FindIndex(x => x.Rodzaj == Rodzaj);
-            if (i == -1)
+            if (listaKategorii == null)
             {
-                Przeglad przeglad = new Przeglad(Rodzaj);
-                DodajPrase(przeglad);
-                listaPrasy.Last().DodajPrase(prasa);
+                listaKategorii[0] = nazwaKategorii;
             }
             else
             {
-                listaPrasy[i].DodajPrase(prasa);
+                if (listaKategorii.Find(x => x.Rodzaj == nazwaKategorii.Rodzaj) == null)
+                {
+                    listaKategorii.Add(nazwaKategorii);
+                }
+            }
+        }
+
+        public void DodajPrase(Prasa prasa, string Rodzaj)
+        {
+            var i = listaKategorii.FindIndex(x => x.Rodzaj == Rodzaj);
+            if (i == -1)
+            {
+                Przeglad przeglad = new Przeglad(Rodzaj);
+                DodajKategorie(przeglad);
+                listaKategorii.Last().DodajPrase(prasa);
+            }
+            else
+            {
+                listaKategorii[i].DodajPrase(prasa);
             }
         }
 
         public void WypiszWszystkiePrasy()
         {
             Console.WriteLine("Wszystkie gazety dostępne w kiosku pod adresem: {this.adres}");
-            foreach (Przeglad przeglad in listaPrasy)
+            foreach (Przeglad przeglad in listaKategorii)
             {
                 przeglad.WypiszWszystkiePrasy();
             }
@@ -72,7 +86,7 @@ namespace Projekt53262
 
         public void ZnajdzPrasePoNr(int i)
         {
-            foreach (Przeglad przeglad in listaPrasy)
+            foreach (Przeglad przeglad in listaKategorii)
             {
                 przeglad.ZnajdzPrasePoNr(i);
             }
@@ -80,7 +94,7 @@ namespace Projekt53262
 
         public void ZnajdzPrasePoTytule(string t)
         {
-            foreach (Przeglad przeglad in listaPrasy)
+            foreach (Przeglad przeglad in listaKategorii)
             {
                 przeglad.ZnajdzPrasePoTytule(t);
             }
