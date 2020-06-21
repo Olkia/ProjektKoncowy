@@ -8,7 +8,7 @@ namespace Projekt53262
 {
     interface KontrolaPrasy
     {
-        void ZnajdzPrasePoTytule(string t);
+        void ZnajdzPrasePoTytule(string tytul);
         void ZnajdzPrasePoNr(int i);
         void WypiszWszystkiePrasy();
     }

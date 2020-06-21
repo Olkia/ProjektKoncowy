@@ -38,7 +38,7 @@ namespace Projekt53262
 
         public void WypiszPracownikow()
         {
-            Console.WriteLine("Zatrudnieni w kiosku o adresie: {this.adres}");
+            Console.WriteLine($"\nZatrudnieni w kiosku o adresie:{this.adres}");
             foreach (Pracownik pracownik in listaPracownikow)
             {
                 pracownik.WypiszInfo();
@@ -77,7 +77,7 @@ namespace Projekt53262
 
         public void WypiszWszystkiePrasy()
         {
-            Console.WriteLine("Wszystkie gazety dostępne w kiosku pod adresem: {this.adres}");
+            Console.WriteLine($"\nWszystkie gazety dostępne w kiosku pod adresem: {this.adres}");
             foreach (Przeglad przeglad in listaKategorii)
             {
                 przeglad.WypiszWszystkiePrasy();
@@ -92,11 +92,11 @@ namespace Projekt53262
             }
         }
 
-        public void ZnajdzPrasePoTytule(string t)
+        public void ZnajdzPrasePoTytule(string tytul)
         {
             foreach (Przeglad przeglad in listaKategorii)
             {
-                przeglad.ZnajdzPrasePoTytule(t);
+                przeglad.ZnajdzPrasePoTytule(tytul);
             }
         }
     }

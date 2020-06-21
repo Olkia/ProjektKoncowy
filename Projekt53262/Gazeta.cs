@@ -21,11 +21,11 @@ namespace Projekt53262
         }
         public override void WypiszInfo()
         {
-            Console.WriteLine("Gazeta");
-            Console.WriteLine("Tytuł: {this.tytul}");
-            Console.WriteLine("Id: {this.id}");
-            Console.WriteLine("Wydawnictwo: {this.wydawnictwo}");
-            Console.WriteLine("Tydzien wydania: {this.tydzWydania}");
+            Console.WriteLine($"\nGazeta");
+            Console.WriteLine($"\nTytuł: {this.tytul}");
+            Console.WriteLine($"\nNr: { this.nr}");
+            Console.WriteLine($"\nWydawnictwo: {this.wydawnictwo}");
+            Console.WriteLine($"\nTydzien wydania: {this.tydzWydania}");
         }
     }
 }

@@ -9,6 +9,8 @@ namespace Projekt53262
     public class Przeglad : KontrolaPrasy
     {
         public List<Prasa> listaPrasy = new List<Prasa>();
+        private object tytul;
+
         public string Rodzaj { get; private set; }
         public Przeglad()
         {
@@ -33,7 +35,7 @@ namespace Projekt53262
 
         public void WypiszWszystkiePrasy()
         {
-            Console.WriteLine("Kategoria : {dzialTematyczny}");
+            Console.WriteLine($"\nKategoria : {this.Rodzaj}");
             foreach (Prasa prasa in listaPrasy)
             {
                 prasa.WypiszInfo();
@@ -45,7 +47,7 @@ namespace Projekt53262
             var tmp = listaPrasy.Find(x => x.nr == i);
             if (tmp != null)
             {
-                Console.WriteLine("Znaleziono prasę o nr {i} w katalogu {this.dzialTematyczny}:");
+                Console.WriteLine($"\nZnaleziono prasę o nr {i} w katalogu: {this.Rodzaj}");
                 tmp.WypiszInfo();
             }
         }
@@ -55,7 +57,7 @@ namespace Projekt53262
             var tmp = listaPrasy.Find(x => x.tytul == tytul);
             if (tmp != null)
             {
-                Console.WriteLine("Znaleziono pozycję o tytule \"{title}\" w katalogu {this.dzialTematyczny}:");
+                Console.WriteLine($"\nZnaleziono pozycję o tytule {this.tytul} w katalogu: {this.listaPrasy}");
                 tmp.WypiszInfo();
             }
         }

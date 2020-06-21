@@ -28,11 +28,11 @@ namespace Projekt53262
 
         public void WypiszInfo()
         {
-            Console.WriteLine("Pracownik");
-            Console.WriteLine("Imię: {this.imie}");
-            Console.WriteLine("Nazwisko: {this.nazwisko}");
-            Console.WriteLine("Data zatrudnienia: {this.dataZatrudnienia}");
-            Console.WriteLine("Wynagrodzenie: {this.wyplata}");
+            Console.WriteLine($"\nPracownik");
+            Console.WriteLine($"\nImię: {this.imie}");
+            Console.WriteLine($"\nNazwisko: {this.nazwisko}");
+            Console.WriteLine($"\nData zatrudnienia: {this.dataZatrudnienia}");
+            Console.WriteLine($"\nWynagrodzenie: {this.wyplata}");
         }
     }
 }

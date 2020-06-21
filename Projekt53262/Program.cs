@@ -74,6 +74,7 @@ namespace Projekt53262
             kiosk2.ZnajdzPrasePoTytule("Fakt");
             Console.WriteLine("\n\n");
             Console.ReadLine();
+
         }
     }
 }
