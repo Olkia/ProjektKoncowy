@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Projekt53262
 {
-    class Gazeta : Prasa
+    public class Gazeta : Prasa
     {
         public Gazeta()
         {
